@@ -1,8 +1,6 @@
 # To do
 
-- post /urls
-  - 1st iteration: use domain as short url key
-- get /urls/{short-url}
+- get /urls/{short-url} and redirect to long url
 - seed data with 3 shortened urls
 - hash url using CRC32
 - add a redis cache

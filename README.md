@@ -12,4 +12,8 @@
 
 ## useful commands
 
-- start server `./gradlew bootRun`
+- start server `./gradlew bootRun` (easier to use IDE)
+
+## useful scripts
+
+- add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
