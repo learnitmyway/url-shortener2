@@ -1,0 +1,12 @@
+services:
+  postgres-dev:
+    container_name: urls-postgres
+    image: "postgres:16-alpine"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/dev:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: urls
