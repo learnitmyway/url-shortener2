@@ -7,7 +7,8 @@
 ## docker-compose
 
 - `docker-compose up`
-- Interact with docker postgres `docker exec --tty --interactive urls-postgres psql --host=localhost --username=postgres --dbname=urls`
+- Interact with docker `docker exec --tty --interactive <container> <program>`
+    - MongoDB Shell `mongosh`
 
 ## useful commands
 

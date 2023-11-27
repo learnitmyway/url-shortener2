@@ -1,12 +1,9 @@
 services:
-  postgres-dev:
-    container_name: urls-postgres
-    image: "postgres:16-alpine"
+  mongo:
+    container_name: urls-mongo
+    image: mongo:5.0
+    restart: always
     ports:
-      - "5433:5432"
+      - 27081:27017
     volumes:
-      - ./data/dev:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_DB: urls
+      - ./data:/data/db
