@@ -1,6 +1,5 @@
 # To do
 
-- set up postgres with docker-compose
 - post /urls
   - 1st iteration: use domain as short url key
 - get /urls/{short-url}
