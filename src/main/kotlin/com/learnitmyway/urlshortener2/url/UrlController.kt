@@ -2,10 +2,13 @@ package com.learnitmyway.urlshortener2.url
 
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
+import org.springframework.web.servlet.ModelAndView
 
 @Controller
 @RequestMapping("/v1/urls")
@@ -15,5 +18,10 @@ class UrlController(val service: UrlService) {
     @ResponseStatus(HttpStatus.CREATED)
     fun create(@RequestBody url: UrlRequest) {
         service.save(url)
+    }
+
+    @GetMapping("/{shortUrl}")
+    fun show(@PathVariable shortUrl: String): ModelAndView {
+        return ModelAndView("redirect:" + "http://www.example.com");
     }
 }

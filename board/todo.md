@@ -1,6 +1,7 @@
 # To do
 
 - get /urls/{short-url} and redirect to long url
+- redirect 301
 - seed data with 3 shortened urls
 - hash url using CRC32
 - add a redis cache
