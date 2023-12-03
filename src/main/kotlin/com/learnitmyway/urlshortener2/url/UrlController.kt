@@ -1,5 +1,6 @@
 package com.learnitmyway.urlshortener2.url
 
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
+import org.springframework.web.client.HttpStatusCodeException
 import org.springframework.web.servlet.ModelAndView
 
 @Controller
@@ -22,6 +24,9 @@ class UrlController(val service: UrlService) {
 
     @GetMapping("/{shortUrl}")
     fun show(@PathVariable shortUrl: String): ModelAndView {
-        return ModelAndView("redirect:" + "http://www.example.com");
+        val urlEntity = service.get(shortUrl) ?: throw NotFoundException()
+
+        return ModelAndView("redirect:${urlEntity.longUrl}")
+
     }
 }
