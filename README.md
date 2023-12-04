@@ -14,6 +14,11 @@
 
 - start server `./gradlew bootRun` (easier to use IDE)
 
+### mongosh
+
+- `use urls`
+- `db.urls.find()`
+
 ## useful scripts
 
 - add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`

@@ -1,8 +1,6 @@
 # To do
 
-- why am I able to query by shortUrl? Is it the same as a scan in DynamoDB?
-- rename shortUrl to urlKey and make it the PK?
-  - prevent duplicates
+- prevent duplicates urls
 - k8s
     - add a load balancer (and update architecture diagram)
     - replicate data

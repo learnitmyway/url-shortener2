@@ -16,14 +16,14 @@ import org.springframework.web.servlet.ModelAndView
 class UrlController(val service: UrlService) {
 
     @PostMapping
-    fun create(@RequestBody url: UrlRequest): ResponseEntity<UrlResponse> {
-        val body = service.save(url)
+    fun create(@RequestBody request: UrlRequest): ResponseEntity<UrlResponse> {
+        val body = service.save(request)
         return ResponseEntity(body, HttpStatus.CREATED)
     }
 
-    @GetMapping("/{shortUrl}")
-    fun show(@PathVariable shortUrl: String): ModelAndView {
-        val urlEntity = service.get(shortUrl) ?: throw NotFoundException()
+    @GetMapping("/{key}")
+    fun show(@PathVariable key: String): ModelAndView {
+        val urlEntity = service.get(key) ?: throw NotFoundException()
 
         return ModelAndView("redirect:${urlEntity.longUrl}")
 
