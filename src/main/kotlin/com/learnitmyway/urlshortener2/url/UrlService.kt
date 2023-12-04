@@ -5,9 +5,11 @@ import org.springframework.stereotype.Service
 @Service
 class UrlService(val db: UrlRepository) {
 
-    fun save(urlRequest: UrlRequest) {
+    fun save(urlRequest: UrlRequest): UrlResponse {
         val shortUrl = toCrc32Hex(urlRequest.longUrl)
-        db.save(UrlEntity(longUrl = urlRequest.longUrl, shortUrl = shortUrl))
+        val longUrl = urlRequest.longUrl
+        val (id) = db.save(UrlEntity(longUrl = urlRequest.longUrl, shortUrl = shortUrl))
+        return UrlResponse(id!!, shortUrl = "http://localhost:8081/v1/urls/$shortUrl", longUrl = longUrl)
     }
 
     fun get(shortUrl: String): UrlEntity? {
