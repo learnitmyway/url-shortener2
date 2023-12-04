@@ -16,4 +16,4 @@
 
 ## useful scripts
 
-- add a url `./scripts/createUrl.sh "www.learnitmyway.com"`
+- add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
