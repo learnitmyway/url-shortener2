@@ -13,6 +13,7 @@
 ## useful commands
 
 - start server `./gradlew bootRun` (easier to use IDE)
+- create jar in `build/libs`: `./gradlew build`
 
 ### mongosh
 
