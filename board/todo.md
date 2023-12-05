@@ -1,5 +1,12 @@
 # To do
 
+- why am I getting `curl: (52) Empty reply from server`?
+  - is it because I need to allow something to go past the root? no
+  - everything seems to be working within the container
+  - Having `service` in the name seems to break it
+- why am I getting "Exception in monitor thread while connecting to server localhost:27017"?
+  - I could try sshing into the url-service and see if it's available https://www.phind.com/search?cache=ez7c1wwyer2cmupytjzvd7w2
+  - could it be because I don't have a username and password?
 - k8s
   - web server deployment + service
   - mongo deployment  + service
