@@ -1,11 +1,15 @@
 # To do
 
 - k8s
+  - web server deployment 
+  - mongo deployment 
   - add a load balancer (and update architecture diagram)
   - replicate data
-  - shard data
+- replicate db
+  - using a stateful set?
 - add a redis cache
   - set up redis with docker-compose
+  - add to k8s
   - update architecture diagram
 - shard db
 - fix: no exception is thrown if there is a duplicate key
@@ -15,4 +19,4 @@
 - seed data with 3 shortened urls
 - how to handle www or no www?
 - validate long url exists
-- persist https and http?
+- persist `https` and `http` as part of `longUrl`?

@@ -12,7 +12,7 @@
 
 ## useful commands
 
-- start server `./gradlew bootRun` (easier to use IDE)
+- start server: with IntelliJ or `./gradlew bootRun`
 - create jar in `build/libs`: `./gradlew build`
 
 ### mongosh
@@ -23,3 +23,4 @@
 ## useful scripts
 
 - add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
+- build and push docker image: `./scripts/build-and-push.sh`
