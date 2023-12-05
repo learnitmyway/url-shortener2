@@ -1,10 +1,9 @@
 # To do
 
 - k8s
-  - web server deployment 
-  - mongo deployment 
-  - add a load balancer (and update architecture diagram)
-  - replicate data
+  - web server deployment + service
+  - mongo deployment  + service
+- healcheck
 - replicate db
   - using a stateful set?
 - add a redis cache
@@ -20,3 +19,4 @@
 - how to handle www or no www?
 - validate long url exists
 - persist `https` and `http` as part of `longUrl`?
+- separate spring profile for production

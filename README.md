@@ -23,6 +23,14 @@
 - add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
 - paste url in response in browser and get redirected
 
-## deployment
+## local deployment with Kubernetes
 
-- build jar, build docker image and push to docker hub: `./scripts/build-and-push.sh`
+1. start Kubernetes cluster with Docker Desktop
+2. build jar, build docker image and push to docker hub: `./scripts/build-and-push.sh`
+3. deploy url-db to cluster `kubectl apply -f k8s/url-db.yaml`
+4. deploy url-service to cluster `kubectl apply -f k8s/url-service.yaml`
+  - ip address of url-service is `<INTERNAL-IP:PORT>` where
+    - `INTERNAL-IP` is given by `kubectl get node -o wide`
+    - `PORT` is the exposed port of url-service-service and is given by `kubectl get services`
+5. get pods `kubectl get pods`
+6. view logs `kubectl logs <pod>`
