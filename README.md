@@ -3,24 +3,26 @@
 - Kotlin
 - Spring Boot
 - Postgres
+- Docker
+- Kubernetes
 
-## docker-compose
+## local development
 
-- `docker-compose up`
+- start database(s) `docker-compose up`
 - Interact with docker `docker exec --tty --interactive <container> <program>`
-    - MongoDB Shell `mongosh`
-
-## useful commands
-
+  - MongoDB Shell `mongosh`
 - start server: with IntelliJ or `./gradlew bootRun`
-- create jar in `build/libs`: `./gradlew build`
 
 ### mongosh
 
 - `use urls`
 - `db.urls.find()`
 
-## useful scripts
+## features
 
 - add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
-- build and push docker image: `./scripts/build-and-push.sh`
+- paste url in response in browser and get redirected
+
+## deployment
+
+- build jar, build docker image and push to docker hub: `./scripts/build-and-push.sh`
