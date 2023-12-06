@@ -5,7 +5,7 @@ metadata:
   labels:
     app: url-server
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: url-server
@@ -19,6 +19,7 @@ spec:
           image: developerdavo/url-shortener2
           ports:
             - containerPort: 8081
+              name: url-server
 ---
 apiVersion: v1
 kind: Service
@@ -31,5 +32,5 @@ spec:
   ports:
     - protocol: TCP
       port: 8081
-      targetPort: 8081
+      targetPort: url-server
       nodePort: 30081
