@@ -1,15 +1,8 @@
 # To do
 
-- why am I getting "Exception in monitor thread while connecting to server localhost:27017"?
-  - I could try sshing into the url-service and see if it's available https://www.phind.com/search?cache=ez7c1wwyer2cmupytjzvd7w2
-    - `curl http://mongo-service:27017/` results in: `It looks like you are trying to access MongoDB over HTTP on the native driver port.`
-      - does this mean I have a connection?
-  - TODO: I think it's because I'm looking for it on localhost, but I need to be looking for `url-db-service`
-  - could it be because I don't have a username and password?
-- k8s
-  - web server deployment + service
-  - mongo deployment  + service
-- healcheck
+- k8s config map for db `host:port`
+- introduce k8s into main branch
+- healthcheck
 - replicate db
   - using a stateful set?
 - add a redis cache
