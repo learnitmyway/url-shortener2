@@ -1,8 +1,5 @@
 # To do
 
-- forward from `/` to `/v1/urls`
-  - https://stackoverflow.com/questions/73108875/spring-boot-forward-on-restcontroller
-
 - ingress rule
 - healthcheck
 - replicate db
