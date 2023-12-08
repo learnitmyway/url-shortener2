@@ -24,7 +24,7 @@ spec:
             - name: DB_URL
               valueFrom:
                 configMapKeyRef:
-                  name: url-db-config
+                  name: config
                   key: url-db-url
 ---
 apiVersion: v1
