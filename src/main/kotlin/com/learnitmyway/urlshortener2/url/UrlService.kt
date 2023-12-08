@@ -9,7 +9,7 @@ class UrlService(val db: UrlRepository) {
         val shortUrl = toCrc32Hex(urlRequest.longUrl)
         val longUrl = urlRequest.longUrl
         db.save(UrlEntity(longUrl = urlRequest.longUrl, key = shortUrl))
-        return UrlResponse(shortUrl = "http://localhost:8081/v1/urls/$shortUrl", longUrl = longUrl)
+        return UrlResponse(shortUrl = "/v1/urls/$shortUrl", longUrl = longUrl)
     }
 
     fun get(urlKey: String): UrlEntity? {

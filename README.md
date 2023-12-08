@@ -20,9 +20,12 @@
 
 ## features
 
-- add a url `./scripts/createUrl.sh "https://www.learnitmyway.com"`
+- add a url `./scripts/createUrl.sh "8081" "https://www.learnitmyway.com"`
 - paste url in response in browser and get redirected
 
-## deployment
+## local deployment with Kubernetes
 
-- build jar, build docker image and push to docker hub: `./scripts/build-and-push.sh`
+1. start Kubernetes cluster with Docker Desktop
+2. build jar, build docker image and push to docker hub: `./scripts/build-and-push.sh`
+3. deploy everything `kubectl apply -f k8s`
+  - ip address of url-service is `localhost:30081`

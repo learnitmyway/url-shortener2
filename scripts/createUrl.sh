@@ -3,6 +3,6 @@
 curl --verbose \
 	--header "Content-Type: application/json" \
 	--data '{
-    "longUrl": "'$1'"
+    "longUrl": "'$2'"
   }' \
-http://localhost:8081/v1/urls
+"http://localhost:${1}/v1/urls"

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-server-deployment
+  labels:
+    app: url-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: url-server
+  template:
+    metadata:
+      labels:
+        app: url-server
+    spec:
+      containers:
+        - name: url-server
+          image: developerdavo/url-shortener2
+          ports:
+            - containerPort: 8081
+              name: url-server
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: url-db-config
+                  key: url-db-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: url-server-service
+spec:
+  type: NodePort
+  selector:
+    app: url-server
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: url-server
+      nodePort: 30081
