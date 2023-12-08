@@ -20,6 +20,12 @@ spec:
           ports:
             - containerPort: 8081
               name: url-server
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: url-db-config
+                  key: url-db-url
 ---
 apiVersion: v1
 kind: Service
