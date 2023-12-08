@@ -1,7 +1,5 @@
 # To do
 
-- k8s config map for db `host:port`
-- introduce k8s into main branch
 - forward from `/` to `/v1/urls`
   - https://stackoverflow.com/questions/73108875/spring-boot-forward-on-restcontroller
 
