@@ -1,9 +1,11 @@
 # To do
 
-- ingress rule
-- healthcheck
-- replicate db
-  - using a stateful set?
+- k8s
+  - ingress rule
+  - healthcheck
+  - replicate and persist data
+    - using a StatefulSet and Volume?
+
 - shard db
 
 - add a redis cache
