@@ -13,6 +13,7 @@
   - add to k8s
   - update architecture diagram
 
+- handle hash collisions
 - k8s namespace
 - fix: no exception is thrown if there is a duplicate key
   - using mongosh I get `MongoServerError: E11000 duplicate key error collection: urls.urls index: _id_ dup key: { _id: "40616eb8" }`
