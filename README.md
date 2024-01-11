@@ -4,7 +4,7 @@ A url shortener using the CRC32 hashing algorithm and the following tech stack:
 
 - Kotlin
 - Spring Boot
-- Postgres
+- MongoDB
 - Docker
 - Kubernetes
 
