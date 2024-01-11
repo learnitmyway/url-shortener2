@@ -1,10 +1,20 @@
 # Url Shortener 2
 
+A url shortener using:
+
 - Kotlin
 - Spring Boot
 - Postgres
 - Docker
 - Kubernetes
+
+## Disclaimer
+
+This app isn't production ready:
+
+- it only works on localhost
+- test coverage is low
+- ...
 
 ## local development
 
